@@ -15,7 +15,7 @@
 		}
 
 		protected function BindData() {
-			if ($strFilter = $this->dtgTable->FilterString) {
+			if ($strFilter = $this->dtgTable->Search["search"]) {
 				$objCondition = QQ::OrCondition(
 					QQ::Like(QQN::Person()->FirstName, '%' . $strFilter . '%'),
 					QQ::Like(QQN::Person()->LastName, '%' . $strFilter . '%')
