@@ -327,13 +327,13 @@
 		public function Refresh() {
 			if ($this->blnUseAjax) {
 				// Trigger a refresh using the datatables refresh method
-				QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), 'draw', QJsPriority::Low);
-}
+				//QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), 'draw', QJsPriority::Low);
+				QApplication::ExecuteJavaScript(sprintf('jQuery("#%s").DataTable().draw()', $this->ControlId) , QJsPriority::Low);
+			}
 			else {
 				parent::Refresh();
 			}
 		}
-
 
 		/**
 		 * @param bool $blnDisplayOutput
