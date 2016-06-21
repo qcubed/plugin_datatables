@@ -543,7 +543,7 @@
 		 * @return string
 		 */
 		public function GetJqSetupFunction() {
-			return 'dataTable';
+			return 'DataTable';
 		}
 
 		/**
@@ -576,13 +576,13 @@
 		 * Simply remove all rows of data from the table.
 		 */
 		public function Clear() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "clear", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().clear", QJsPriority::Low);
 		}
 		/**
 		 * Retrieve the data for the whole table, in row index order.
 		 */
 		public function Data() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "data", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().data", QJsPriority::Low);
 		}
 		/**
 		 * Restore the tables in the current context to its original state in the
@@ -591,7 +591,7 @@
 		 * @param $remove
 		 */
 		public function Destroy($remove = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "destroy", $remove, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().destroy", $remove, QJsPriority::Low);
 		}
 		/**
 		 * Redraw the DataTables in the current context updating ordering,
@@ -599,7 +599,7 @@
 		 * @param $reset
 		 */
 		public function Draw($reset = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "draw", $reset, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().draw", $reset, QJsPriority::Low);
 		}
 		/**
 		 * Look up a language token that was defined in the DataTables'
@@ -608,20 +608,20 @@
 		 * @param $def
 		 */
 		public function I18n($token, $def = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "i18n", $token, $def, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().i18n", $token, $def, QJsPriority::Low);
 		}
 		/**
 		 * Get the initialisation options used for the table.
 		 */
 		public function Init() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "init", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().init", QJsPriority::Low);
 		}
 		/**
 		 * Remove event listeners that have previously been added with on()DT.
 		 * @param $event
 		 */
 		public function Off($event = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "off", $event, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().off", $event, QJsPriority::Low);
 		}
 		/**
 		 * Listen for events from tables and fire a callback when they occur
@@ -629,7 +629,7 @@
 		 * @param $callback
 		 */
 		public function On($event, $callback) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "on", $event, $callback, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().on", $event, $callback, QJsPriority::Low);
 		}
 		/**
 		 * Add an event listener, for which the callback will be fired once only
@@ -638,7 +638,7 @@
 		 * @param $callback
 		 */
 		public function One($event, $callback) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "one", $event, $callback, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().one", $event, $callback, QJsPriority::Low);
 		}
 		/**
 		 * Get the current ordering of the table. If there is more than one table
@@ -647,7 +647,7 @@
 		 * table in the API's context.
 		 */
 		public function Order1() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "order", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().order", QJsPriority::Low);
 		}
 		/**
 		 * Set the ordering to apply to the table using 1D ordering arrays. Note
@@ -656,7 +656,7 @@
 		 * @param $order
 		 */
 		public function Order2($order = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "order", $order, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().order", $order, QJsPriority::Low);
 		}
 		/**
 		 * Set the ordering to apply to the table using a 2D ordering array. Note
@@ -665,7 +665,7 @@
 		 * @param $order
 		 */
 		public function Order3($order) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "order", $order, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().order", $order, QJsPriority::Low);
 		}
 		/**
 		 * Get the current page of the table. Note that if multiple tables are
@@ -674,14 +674,14 @@
 		 * with multiple tables in a single API context.
 		 */
 		public function Page1() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "page", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().page", QJsPriority::Low);
 		}
 		/**
 		 * Set the page to be displayed by the table
 		 * @param $set
 		 */
 		public function Page2($set) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "page", $set, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().page", $set, QJsPriority::Low);
 		}
 		/**
 		 * Get the currently applied global search. If there is more than one
@@ -690,7 +690,7 @@
 		 * table in the API's context.
 		 */
 		public function Search1() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "search", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().search", QJsPriority::Low);
 		}
 		/**
 		 * Set the global search to use on the table. Note this doesn't actually
@@ -699,26 +699,26 @@
 		 * @param $input
 		 */
 		public function Search2($input = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "search", $input, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().search", $input, QJsPriority::Low);
 		}
 		/**
 		 * Get the settings object for the table's in the API instance's context.
 		 */
 		public function Settings() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "settings", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().settings", QJsPriority::Low);
 		}
 		/**
 		 * Get the last saved state of the table
 		 */
 		public function State() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "state", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().state", QJsPriority::Low);
 		}
 		/**
 		 * Select the cell found by a cell selector
 		 * @param $cellSelector
 		 */
 		public function Cell1($cellSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "cell", $cellSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().cell", $cellSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select the cell found from both row and column selectors
@@ -726,21 +726,21 @@
 		 * @param $columnSelector
 		 */
 		public function Cell2($rowSelector, $columnSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "cell", $rowSelector, $columnSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().cell", $rowSelector, $columnSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select all cells
 		 * @param $modifier
 		 */
 		public function Cells1($modifier = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "cells", $modifier, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().cells", $modifier, QJsPriority::Low);
 		}
 		/**
 		 * Select cells found by a cell selector
 		 * @param $cellSelector
 		 */
 		public function Cells2($cellSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "cells", $cellSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().cells", $cellSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select cells found by both row and column selectors
@@ -748,90 +748,90 @@
 		 * @param $columnSelector
 		 */
 		public function Cells3($rowSelector, $columnSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "cells", $rowSelector, $columnSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().cells", $rowSelector, $columnSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select the column found by a the column selector
 		 * @param $columnSelector
 		 */
 		public function Column($columnSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "column", $columnSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().column", $columnSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select all columns
 		 * @param $modifier
 		 */
 		public function Columns1($modifier = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "columns", $modifier, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().columns", $modifier, QJsPriority::Low);
 		}
 		/**
 		 * Select columns found by a cell selector
 		 * @param $columnSelector
 		 */
 		public function Columns2($columnSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "columns", $columnSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().columns", $columnSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select a row found by a row selector
 		 * @param $rowSelector
 		 */
 		public function Row($rowSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "row", $rowSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().row", $rowSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select all rows
 		 * @param $modifier
 		 */
 		public function Rows1($modifier = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "rows", $modifier, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().rows", $modifier, QJsPriority::Low);
 		}
 		/**
 		 * Select rows found by a row selector
 		 * @param $rowSelector
 		 */
 		public function Rows2($rowSelector = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "rows", $rowSelector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().rows", $rowSelector, QJsPriority::Low);
 		}
 		/**
 		 * Select a table based on the given selector
 		 * @param $selector
 		 */
 		public function Table($selector) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "table", $selector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().table", $selector, QJsPriority::Low);
 		}
 		/**
 		 * Select all tables
 		 */
 		public function Tables1() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "tables", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().tables", QJsPriority::Low);
 		}
 		/**
 		 * Select tables based on the given selector
 		 * @param $selector
 		 */
 		public function Tables2($selector) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "tables", $selector, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().tables", $selector, QJsPriority::Low);
 		}
 		/**
 		 * Get a boolean value to indicate if there are any entries in the API
 		 * instance's result set (i.e. any data, selected rows, etc).
 		 */
 		public function Any() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "any", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().any", QJsPriority::Low);
 		}
 		/**
 		 * Concatenate two or more API instances together
 		 * @param $a
 		 */
 		public function Concat($a = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "concat", $a, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().concat", $a, QJsPriority::Low);
 		}
 		/**
 		 * Iterate over the contents of the API result set.
 		 * @param $fn
 		 */
 		public function Each($fn) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "each", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().each", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Reduce an API instance to a single context and result set, based on a
@@ -840,7 +840,7 @@
 		 * @param $idx
 		 */
 		public function Eq($idx) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "eq", $idx, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().eq", $idx, QJsPriority::Low);
 		}
 		/**
 		 * Iterate over the result set of an API instance and test each item,
@@ -848,34 +848,34 @@
 		 * @param $fn
 		 */
 		public function Filter($fn) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "filter", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().filter", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Reduce a 2D array structured API instance to a 1D array structure.
 		 */
 		public function Flatten() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "flatten", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().flatten", QJsPriority::Low);
 		}
 		/**
 		 * Find the first instance of a value in the API instance's result set.
 		 * @param $value
 		 */
 		public function IndexOf($value) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "indexOf", $value, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().indexOf", $value, QJsPriority::Low);
 		}
 		/**
 		 * Join the elements in the API instance's result set into a string.
 		 * @param $separator
 		 */
 		public function Join($separator) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "join", $separator, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().join", $separator, QJsPriority::Low);
 		}
 		/**
 		 * Find the last instance of a value in the API instance's result set.
 		 * @param $value
 		 */
 		public function LastIndexOf($value) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "lastIndexOf", $value, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().lastIndexOf", $value, QJsPriority::Low);
 		}
 		/**
 		 * Iterate over the result set of an API instance, creating a new API
@@ -883,7 +883,7 @@
 		 * @param $fn
 		 */
 		public function Map($fn) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "map", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().map", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Iterate over the result set of an API instance, creating a new API
@@ -891,20 +891,20 @@
 		 * @param $property
 		 */
 		public function Pluck($property) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "pluck", $property, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().pluck", $property, QJsPriority::Low);
 		}
 		/**
 		 * Remove the last item from an API instance's result set.
 		 */
 		public function Pop() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "pop", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().pop", QJsPriority::Low);
 		}
 		/**
 		 * Add one or more items to the end of an API instance's result set.
 		 * @param $value_1
 		 */
 		public function Push($value_1 = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "push", $value_1, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().push", $value_1, QJsPriority::Low);
 		}
 		/**
 		 * Apply a callback function against and accumulator and each element in
@@ -912,7 +912,7 @@
 		 * @param $fn
 		 */
 		public function Reduce($fn = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "reduce", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().reduce", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Apply a callback function against and accumulator and each element in
@@ -920,27 +920,27 @@
 		 * @param $fn
 		 */
 		public function ReduceRight($fn = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "reduceRight", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().reduceRight", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Reverse the result set of the API instance and return the original
 		 * array.
 		 */
 		public function Reverse() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "reverse", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().reverse", QJsPriority::Low);
 		}
 		/**
 		 * Remove the first item from an API instance's result set.
 		 */
 		public function Shift() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "shift", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().shift", QJsPriority::Low);
 		}
 		/**
 		 * Sort the elements of the API instance's result set.
 		 * @param $fn
 		 */
 		public function Sort($fn = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "sort", $fn, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().sort", $fn, QJsPriority::Low);
 		}
 		/**
 		 * Modify the contents of an Api instance's result set, adding or
@@ -949,33 +949,33 @@
 		 * @param $howMany
 		 */
 		public function Splice($index, $howMany = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "splice", $index, $howMany, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().splice", $index, $howMany, QJsPriority::Low);
 		}
 		/**
 		 * Create a native Javascript array from an API instance.
 		 */
 		public function ToArray() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "toArray", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().toArray", QJsPriority::Low);
 		}
 		/**
 		 * Create a jQuery object from an API instance.
 		 */
 		public function ToJQuery() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "toJQuery", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().toJQuery", QJsPriority::Low);
 		}
 		/**
 		 * Create a new API instance containing only the unique items from a the
 		 * elements in an instance's result set.
 		 */
 		public function Unique() {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "unique", QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().unique", QJsPriority::Low);
 		}
 		/**
 		 * Add one or more items to the start of an API instance's result set.
 		 * @param $value_1
 		 */
 		public function Unshift($value_1 = null) {
-			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "unshift", $value_1, QJsPriority::Low);
+			QApplication::ExecuteControlCommand($this->getJqControlId(), $this->getJqSetupFunction() . "().unshift", $value_1, QJsPriority::Low);
 		}
 
 

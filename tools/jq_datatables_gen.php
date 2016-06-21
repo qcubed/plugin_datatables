@@ -12,6 +12,9 @@ require(__DOCROOT__ . __PHP_ASSETS__ . '/_devtools/jquery_ui_gen/jq_control.php'
  * online. So, we need to navigate to each page individually in order to build the interface.
  *
  * It is possible to download the documentation before scraping it. See comment at bottom.
+ *
+ * Its likely that every time you run this, you will have to fix problems with it. The structure of the Datatables documentation
+ * changes often, as well as well as the tools to do the scraping.
  */
 
 
@@ -206,14 +209,20 @@ class DataTablesJqDoc extends JqDoc
  *
  * One way to create a local copy usable by this generator is to use the following command:
  *
- * httrack 'http://www.datatables.net/reference/' -O your_output_dir
+ * httrack 'https://datatables.net/reference/' -O your_output_dir
  */
 function jq_datatables_gen()
 {
-	$strUrl = 'http://www.datatables.net/reference/';
+	$strUrl = 'https://datatables.net/reference/';
 
 	// example of using a local copy mapped to a local domain.
 	//$strUrl = 'http://home.dev/datatables/datatables.net/reference/';
+
+	// EDIT: the scroper no longer works.
+	// TODO: The datatables website has been restructured, and soe we need to fix the scraper to look for things in the right place.
+	// TODO: JqControlGen assume that options can be changed after initialization. DataTables does no allow this.
+	// TODO: Calling methods in datatables requires getting the instance in a way different than jQuery UI. See
+	// The current QDataTableGen.php file for how methods should be called.
 
 	$jqControlGen = new JqControlGen();
     $objJqDoc = new DataTablesJqDoc($strUrl);
