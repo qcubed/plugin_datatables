@@ -364,7 +364,7 @@
 	 *
 	 */
 
-	class QDataTableGen extends QSimpleTable	{
+	class QDataTableGen extends QHtmlTable	{
 		protected $strJavaScripts = __JQUERY_EFFECTS__;
 		protected $strStyleSheets = __JQUERY_CSS__;
 		/** @var boolean */

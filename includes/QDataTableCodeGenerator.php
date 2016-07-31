@@ -1,9 +1,9 @@
 <?php
 /**
- * Code generator for the DataGrid2 object.
+ * Code generator for the DataTable object.
  */
 
-class QDataTableCodeGenerator extends QSimpleTable_CodeGenerator {
+class QDataTableCodeGenerator extends QHtmlTable_CodeGenerator {
 	/** @var  string */
 	protected $strControlClassName;
 
@@ -17,7 +17,7 @@ class QDataTableCodeGenerator extends QSimpleTable_CodeGenerator {
 	 * @param QCodeGenBase $objCodeGen
 	 * @param QTable $objTable
 	 */
-	public function DataListConstructor(QCodeGenBase $objCodeGen, QTable $objTable) {
+	public function DataListConstructor(QCodeGenBase $objCodeGen, QSqlTable $objTable) {
 		$strClassName = $this->GetControlClass();
 		$strCode = <<<TMPL
 	/**
@@ -44,7 +44,7 @@ TMPL;
 
 
 
-	protected function DataListParentMakeEditable(QCodeGenBase $objCodeGen, QTable $objTable) {
+	protected function DataListParentMakeEditable(QCodeGenBase $objCodeGen, QSqlTable $objTable) {
 		$strVarName = $objCodeGen->DataListVarName($objTable);
 
 		$strCode = <<<TMPL
@@ -75,7 +75,7 @@ TMPL;
 	 * @param QTable $objTable
 	 * @return string
 	 */
-	protected function DataListDataBinder(QCodeGenBase $objCodeGen, QTable $objTable) {
+	protected function DataListDataBinder(QCodeGenBase $objCodeGen, QSqlTable $objTable) {
 		$strObjectType = $objTable->ClassName;
 		$strCode = <<<TMPL
    /**
@@ -127,7 +127,7 @@ TMPL;
  * @param QTable $objTable
  * @return string
  */
-protected function DataListGetCondition(QCodeGenBase $objCodeGen, QTable $objTable)
+protected function DataListGetCondition(QCodeGenBase $objCodeGen, QSqlTable $objTable)
 {
 	/**
 	 * The following creates a search filter based on the current columns.
