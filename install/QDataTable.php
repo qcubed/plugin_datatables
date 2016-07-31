@@ -1,6 +1,6 @@
 <?php
 /**
- * QDataTables is an interface to the DataTables jquery control. It is based on a QSimpleTable, and provides
+ * QDataTables is an interface to the DataTables jquery control. It is based on a QHtmlTable, and provides
  * a number of unique styling options that can be very difficult to implement, including:
  * - Javascript only table handling if wanted, such that the entire table can be searched, sorted, paged
  *   and scrolled all in javascript

@@ -25,7 +25,7 @@ class DataTablesJqDoc extends JqDoc
 
     public function __construct($strBaseUrl)
 	{
-		parent::__construct('DataTables', 'dataTable', 'QDataTable', 'QSimpleTable');
+		parent::__construct('DataTables', 'dataTable', 'QDataTable', 'QHtmlTable');
 
 		$strUrl = $strBaseUrl . 'option';
 		$this->buildOptions($strUrl);
